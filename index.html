@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="has-text-centered">
+    <div class="notification has-background-danger is-size-3 has-text-white">
+      <div class="clusterNav is-centered">
+        <a href="https://ingenaes.illinois.edu/wp-content/uploads/ING-Activity-Sheet-2016_07-Eating-Variety-of-Foods-Andrade-Kuyper-Bell.pdf">
+          <div class="logo"><img src="https://i.imgur.com/46Ty0UE.png"></div>
+        </a>
+        <font size="3"> <i>Your Customizable Recipe Generator</i></font>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEFT SIDE -- RECIPE GENERATOR -->
+  <div class="row">
+    <div class="column hero has-text-centered has-background-danger-light" id="hero">
+      <div class="hero-body">
+        <h3 class="subtitle">
+          Find a Recipe
+        </h3>
+        <h4 class="subtitle">
+          Enter your choice of ingrediants below.
+        </h4>
+        <p>*Please have a space between each ingredient*</p>
+
+        <!-- INPUT FIELD + BUTTON -->
+        <input id="search" class="input is-primary is-centered is-small" type="text"
+          placeholder="banana apple oatmeal" />
+
+        <!-- DIET RESTRICTIONS -->
+        <div class="mt-3">
+          <p><i> Dietary Retrictions? </i> No Problem!</p>
+        </div>
+        <label for="high-protein">
+          <input type="checkbox" id="Check1" name="high-protein" onclick="selectOnlyThis(this.id)"> High Protein
+        </label>
+
+        <label for="low-carb">
+          <input type="checkbox" id="Check2" name="low-carbohydrate" onclick="selectOnlyThis(this.id)">
+          Low-Carbohydrate
+        </label>
+
+        <label for="ketogenic">
+          <input type="checkbox" id="Check3" name="ketogenic" onclick="selectOnlyThis(this.id)"> Ketogenic </label>
+
+        <label for="vegetarian">
+          <input type="checkbox" id="Check4" name="vegetarian" onclick="selectOnlyThis(this.id)"> Vegetarian </label>
+
+        <label for="vegan">
+          <input type="checkbox" id="Check5" name="vegan" onclick="selectOnlyThis(this.id)"> Vegan </label>
+
+        <!-- BUTTON -->
+        <div class=" is centered"> <button class="button is-danger is-outlined my-3" id="submitButton">
+            Search
+          </button>
+        </div>
+
+        <!-- RECIPE DATA -->
+        <div class="my-3">
+          <h2>Your recipe is below!</h2>
+
+        </div>
+
+        <div id="recipe_section">
+          <!--           <p>Waiting for you to enter your ingredients of choice!</p> -->
+        </div>
+        <div class="is-italic is-size-2">
+          <h3 id="recipe-name"></h3>
+        </div>
+        <img id="recipe-image" />
+        <div class="is-centered" id="recipe-link">
+        </div>
+        <div id="recipe-calories"></div>
+      </div>
+    </div>
+    <!-- RIGHT SIDE -- GROCERY LIST SECTION -->
+    <div class="column has-text-centered mt-6">
+
+      <strong class="hero mb-4 mt-3"> Grocery List</strong>
+      <p>Realizing you're out of ingredients? Add them to your grocery list!</p>
+
+      <!-- INPUT FIELD + BUTTON -->
+      <input id="grocery-input-field" class="input is-primary is-centered is-small my-3" type="text"
+        placeholder="ex. banana" />
+      <button class="button is-danger is-outlined my-3" id="add-grocery-button"> Add </button>
+
+      <!-- GROCERY LIST -->
+      <div>
+        <ul>
+          <div id="grocery-list">
+          </div>
+          <!-- This is where the grocery list items will be populated -->
+      </div>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="content has-text-centered ">
+      <p>
+        Template Created by <a href="https://bulma.io/">Bulma</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
